@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `account` (
-    `id` bigint(20) NOT NULL AUTO_INCREMENT,
+    `id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `email` varchar(300) NOT NULL,
     `password` varchar(60) NOT NULL,
     `name` varchar(30) NOT NULL,

@@ -57,10 +57,10 @@ public class TokenFilter extends OncePerRequestFilter {
 			if (authenticationToken != null) {
 				SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 			}
-
-			filterChain.doFilter(request, response);
-			SecurityContextHolder.clearContext();
 		}
+
+		filterChain.doFilter(request, response);
+		SecurityContextHolder.clearContext();
 	}
 
 	private String resolveToken(HttpServletRequest request) {

@@ -61,6 +61,8 @@ public class AuthenticationHandler implements AuthenticationSuccessHandler, Auth
 
 		// token 넣기
 		Map<String, Object> responseBody = new HashMap<>();
+		String token = provider.generateToken(authentication);
+		responseBody.put("accessToken", token);
 
 		try (PrintWriter writer = response.getWriter()) {
 			writer.write(mapper.writeValueAsString(responseBody));

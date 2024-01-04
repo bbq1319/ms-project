@@ -25,7 +25,7 @@ public class AccountControllerTest extends MsProjectApplicationTests {
 	public void login_success() throws Exception {
 		// Given
 		Map<String, String> request = new LinkedHashMap<>();
-		request.put("email", "qhshef@gmail.com");
+		request.put("email", "qhshef@msproject.com");
 		request.put("password", "test1234!");
 
 		when(passwordEncoder.matches(anyString(), anyString()))
