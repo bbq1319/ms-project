@@ -35,7 +35,7 @@ public class TokenProvider {
 			.withExpiresAt(Date.from(Instant.now().plusSeconds(PROPERTIES.getValidity())))
 			.sign(ALGORITHM);
 	}
-	
+
 	public DecodedJWT parseToken(String token) {
 		return JWT.require(ALGORITHM)
 			.build()
