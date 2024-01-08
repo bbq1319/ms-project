@@ -5,7 +5,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.luxurystar.msproject.exception.code.ErrorCode;
 
-public record ExceptionResponse(String ErrorCode, String message) {
+public record ExceptionResponse(String errorCode, String message) {
 
 	public static ExceptionResponse from(ErrorCode errorCode) {
 		return ExceptionResponse.of(errorCode.getCode(), errorCode.getMessage());
