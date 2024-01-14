@@ -3,7 +3,8 @@ package com.luxurystar.msproject.biz.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
+import com.luxurystar.msproject.common.EntityAudit;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,21 +16,15 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Product {
+public class OptionGroup extends EntityAudit {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<ProductTag> tag = new ArrayList<>();
 
-	public void setTag(List<ProductTag> list) {
-		for (ProductTag productTag : list) {
-			if (!this.tag.contains(productTag)) {
-				this.tag.add(productTag);
-				productTag.setParent(this);
-			}
-		}
-	}
+	@OneToMany(mappedBy = "optionGroup")
+	private List<MenuOptionGroup> menuOptionGroupList = new ArrayList<>();
+	@OneToMany(mappedBy = "optionGroup")
+	private List<Option> optionList = new ArrayList<>();
 }

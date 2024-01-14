@@ -12,6 +12,10 @@ public class BaseException extends RuntimeException {
 	private final HttpStatus status;
 	private final String errorCode;
 
+	protected BaseException(ErrorCode errorCode) {
+		this(null, errorCode.getStatus(), errorCode.getCode(), errorCode.getMessage());
+	}
+
 	private BaseException(Throwable cause, HttpStatus status, String errorCode, String errorMessage) {
 		super(errorMessage, cause);
 		this.status = status;
