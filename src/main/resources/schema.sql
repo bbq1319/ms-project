@@ -62,3 +62,20 @@ CREATE TABLE IF NOT EXISTS `menu_option_group` (
     `created_date` TIMESTAMP NOT NULL,
     `created_by` varchar(300) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS `cart` (
+    `id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `account_id` bigint NOT NULL,
+    `menu` bigint NOT NULL,
+    `count` integer NOT NULL,
+    `created_date` TIMESTAMP NOT NULL,
+    `created_by` varchar(300) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `cart_option` (
+    `id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `cart_id` bigint NOT NULL,
+    `option` bigint NOT NULL,
+    `created_date` TIMESTAMP NOT NULL,
+    `created_by` varchar(300) NOT NULL
+);

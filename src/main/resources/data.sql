@@ -39,3 +39,9 @@ MERGE INTO `option` KEY (id) VALUES
 MERGE INTO `menu_option_group` KEY (id) VALUES
     (1, 1, 1, 1, '2024-01-01 00:00:00', 'SYSTEM'),
     (2, 1, 3, 2, '2024-01-01 00:00:00', 'SYSTEM');
+
+MERGE INTO `cart` KEY (id) VALUES
+    (1, 1, 1, 1, '2024-01-01 00:00:00', 'SYSTEM'),
+    (2, 1, 1, 1, '2024-01-01 00:00:00', 'SYSTEM'),
+    (3, 1, 1, 1, '2024-01-01 00:00:00', 'SYSTEM'),
+    (4, 1, 1, 1, '2024-01-01 00:00:00', 'SYSTEM');
